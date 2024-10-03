@@ -33,7 +33,6 @@ describe('Company API', () => {
         
       });
   });
-  // Você pode adicionar outros testes aqui (como testes de falha, etc.)
 });
 
 describe('Company API', () => {
@@ -58,7 +57,6 @@ describe('Company API', () => {
       ]);
       console.log(response.body); // Mostra o corpo da resposta no console
   });
-  // Você pode adicionar outros testes aqui (como testes de falha, etc.)
 });
 
 describe('Company API', () => {
@@ -76,11 +74,10 @@ describe('Company API', () => {
     await p.spec()
       .put(`${baseUrl}/company/45`) // Faz uma requisição PUT na URL com o ID da empresa
       .withHeaders('monitor', false)
-      .expectStatus(StatusCodes.NOT_FOUND) // Verifica se o status é 200 OK
+      .expectStatus(StatusCodes.NOT_FOUND)
       .expectJsonLike({        
       });
   });
-  // Você pode adicionar outros testes aqui (como testes de falha, etc.)
 });
 
 describe('Company API', () => {
@@ -100,8 +97,7 @@ describe('Company API', () => {
     await p.spec()
       .get(`${baseUrl}/company/${idToGet}`) // Faz uma requisição GET na URL com o ID
       .withHeaders('monitor', false)
-      .expectStatus(StatusCodes.NOT_FOUND) // Verifica se o status é 200 OK
-
+      .expectStatus(StatusCodes.NOT_FOUND)
   });
 
   it('Deve deletar uma empresa com sucesso', async () => {
@@ -110,8 +106,6 @@ describe('Company API', () => {
     await p.spec()
       .delete(`${baseUrl}/company/${idToDelete}`) // Faz uma requisição DELETE na URL com o ID
       .withHeaders('monitor', false)
-      .expectStatus(StatusCodes.OK); // Verifica se o status é 204 No Content
+      .expectStatus(StatusCodes.OK);
   });
-
-  // Você pode adicionar outros testes aqui (como testes de falha, etc.)
 });
